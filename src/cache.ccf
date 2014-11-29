@@ -1,0 +1,17 @@
+#Configuración más básica para el cache
+
+jcs.region.mvcCache=DC
+jcs.region.mvcCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.region.mvcCache.cacheattributes.MaxObjects=1000
+jcs.region.mvcCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+
+ 
+
+#Sección donde se agrega el "memory shrinker" o reductor de memoria.
+
+jcs.region.mvcCache.cacheattributes.ShrinkerIntervalSeconds=60
+jcs.region.mvcCache.cacheattributes.MaxSpoolPerRun=500
+jcs.region.mvcCache.elementattributes=org.apache.jcs.engine.ElementAttributes
+jcs.region.mvcCache.elementattributes.IsEternal=false
+jcs.region.mvcCache.cacheattributes.UseMemoryShrinker=true
+jcs.region.mvcCache.cacheattributes.MaxMemoryIdleTimeSeconds=3600
