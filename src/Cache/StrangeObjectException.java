@@ -1,6 +1,8 @@
 
 package Cache;
 
+import org.apache.jcs.access.exception.CacheException;
+
 public class StrangeObjectException extends Exception{
 
     public StrangeObjectException() {
