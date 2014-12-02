@@ -83,16 +83,16 @@ public class DreamTeamCache {
 
     /**
      * Método encargado de limpiar completamente la cache.
-     *     
+     *
      * @throws org.apache.jcs.access.exception.CacheException
      */
     public void clean() throws CacheException {
         jcsCache.clear();
     }
- 
+
     /**
-     * Método que recorre la caché del índice inicio hasta el
-     * índice fin; convirtiendo los objetos encontrados a tipo Cacheable.
+     * Método que recorre la caché del índice inicio hasta el índice fin;
+     * convirtiendo los objetos encontrados a tipo Cacheable.
      *
      * @param inicio, es el índice desde donde empezará a recorrer la caché.
      * @param fin, es el índice donde terminará de recorrer la caché.
@@ -105,5 +105,17 @@ public class DreamTeamCache {
             arreglo.add(get(i));
         }
         return arreglo;
+    }
+
+    /**
+     * Método que verifica si un objeto se encuentra en la caché
+     *     
+* @param id el identificador asociado al objeto que se desee encontrar
+     * @return true si el objeto existe, false si no existe
+     */
+    public boolean existenciaDeObjeto(int id) {
+        InterfazCache object;
+        object = (InterfazCache) jcsCache.get(id);
+        return object != null;
     }
 }
